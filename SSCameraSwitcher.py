@@ -1372,7 +1372,7 @@ class MainGUI(QtWidgets.QMainWindow):
 
         outputDir = ""
         if self.optionDict["outputOpt"] == "project":
-            outputDir = cmds.workspace(q=True,directory = True) + cmds.workspace(fileRuleEntry = "images") + "/"
+            outputDir = cmds.workspace(q=True,rootDirectory = True) + cmds.workspace(fileRuleEntry = "images") + "/"
         elif self.optionDict["outputOpt"] == "custom":
             outputDir = self.optionDict["outputDir"]
 
@@ -1397,7 +1397,7 @@ class MainGUI(QtWidgets.QMainWindow):
 
         outputDir = ""
         if self.optionDict["outputOpt"] == "project":
-            outputDir = cmds.workspace(q=True,directory = True) + cmds.workspace(fileRuleEntry = "images") + "/"
+            outputDir = cmds.workspace(q=True,rootDirectory = True) + cmds.workspace(fileRuleEntry = "images") + "/"
         elif self.optionDict["outputOpt"] == "custom":
             outputDir = self.optionDict["outputDir"]
 
@@ -1418,7 +1418,7 @@ class MainGUI(QtWidgets.QMainWindow):
 
         outputDir = ""
         if self.optionDict["outputOpt"] == "project":
-            outputDir = cmds.workspace(q=True,directory = True) + cmds.workspace(fileRuleEntry = "images") + "/"
+            outputDir = cmds.workspace(q=True,rootDirectory = True) + cmds.workspace(fileRuleEntry = "images") + "/"
         elif self.optionDict["outputOpt"] == "custom":
             outputDir = self.optionDict["outputDir"]
 
@@ -1439,4 +1439,5 @@ def callCameraSwitcher():
     mayaMainWindow = getTopLevelWidget('MayaWindow')
     windowCheck(objectName,mayaMainWindow)
     mainGUI = MainGUI(parent = mayaMainWindow,objectName = objectName)
+
     mainGUI.show()
